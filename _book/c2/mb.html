@@ -1,0 +1,619 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.5 MetricBeat配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="fb.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../c1/">
+            
+                <a href="../c1/">
+            
+                    
+                    第一章 ELKStack组件介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../c1/es.html">
+            
+                <a href="../c1/es.html">
+            
+                    
+                    1.1 ElasticSearch介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../c1/logstash.html">
+            
+                <a href="../c1/logstash.html">
+            
+                    
+                    1.2 Logstash介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../c1/kibana.html">
+            
+                <a href="../c1/kibana.html">
+            
+                    
+                    1.3 Kibana介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../c1/fb.html">
+            
+                <a href="../c1/fb.html">
+            
+                    
+                    1.4 FileBeat介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../c1/mb.html">
+            
+                <a href="../c1/mb.html">
+            
+                    
+                    1.5 MetricBeat介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../c1/ab.html">
+            
+                <a href="../c1/ab.html">
+            
+                    
+                    1.6 AuditBeat介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第二章 典型配置讲解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="es.html">
+            
+                <a href="es.html">
+            
+                    
+                    2.1 ElasticSearch配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="logstash.html">
+            
+                <a href="logstash.html">
+            
+                    
+                    2.2 Logstash配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="logstash.1.html">
+            
+                <a href="logstash.1.html">
+            
+                    
+                    2.2.1 基本配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="logstash.2.html">
+            
+                <a href="logstash.2.html">
+            
+                    
+                    2.2.2 GROK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="kibana.html">
+            
+                <a href="kibana.html">
+            
+                    
+                    2.3 Kibana配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="fb.html">
+            
+                <a href="fb.html">
+            
+                    
+                    2.4 FileBeat配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="mb.html">
+            
+                <a href="mb.html">
+            
+                    
+                    2.5 MetricBeat配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.5 MetricBeat配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="25-metricbeat&#x914D;&#x7F6E;">2.5 MetricBeat&#x914D;&#x7F6E;</h1>
+<h2 id="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;">&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;</h2>
+<p>&#x76EE;&#x524D;&#x6700;&#x65B0;&#x7248;&#x672C;&#x662F;6.5.4&#x3002;   </p>
+<h3 id="&#x4E0B;&#x8F7D;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;">&#x4E0B;&#x8F7D;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</h3>
+<h4 id="64&#x4F4D;linux&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;">64&#x4F4D;linux&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h4>
+<pre><code class="lang-bash">wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.5.4-linux-x86_64.tar.gz
+tar xf metricbeat-6.5.4-linux-x86_64.tar.gz
+mv metricbeat-6.5.4-linux-x86_64 ./metricbeat
+</code></pre>
+<p>&#x90A3;&#x4E48;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x9762;metricbeat&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x9762;&#x5C31;&#x662F;&#x5168;&#x90E8;&#x4E86;&#xFF0C;&#x5305;&#x542B;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x548C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+<h4 id="mac">MAC</h4>
+<pre><code class="lang-bash">wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.5.4-darwin-x86_64.tar.gz
+</code></pre>
+<p>&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;brew&#x6765;&#x5B89;&#x88C5;</p>
+<pre><code class="lang-bash">brew install metricbeat
+</code></pre>
+<p>&#x90A3;&#x4E48;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;&#xFF1A; <strong>/usr/local/etc/metricbeat/metricbeat.yml</strong></p>
+<h4 id="64&#x4F4D;windows">64&#x4F4D;Windows</h4>
+<pre><code>https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.5.4-windows-x86_64.zip
+</code></pre><h4 id="64&#x4F4D;debian">64&#x4F4D;Debian</h4>
+<pre><code class="lang-bash">wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.5.4-amd64.deb
+dpkg -i metricbeat-6.5.4-amd64.deb
+systemctl start metricbeat
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;&#xFF1A; <strong>/etc/metricbeat/metricbeat.yml</strong></p>
+<h4 id="64&#x4F4D;centos">64&#x4F4D;Centos</h4>
+<pre><code class="lang-bash">wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.5.4-x86_64.rpm
+rpm -ivh metricbeat-6.5.4-x86_64.rpm
+systemctl start metricbeat
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F4D;&#x4E8E;&#xFF1A; <strong>/etc/metricbeat/metricbeat.yml</strong></p>
+<p>Debian&#xFF0C;Ubuntu&#xFF0C;Centos&#x7B49;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x63A8;&#x8350;&#x91C7;&#x7528;&#x540E;&#x9762;&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x6837;Systemd&#x4F1A;&#x81EA;&#x52A8;&#x5B89;&#x88C5;&#x597D;&#xFF0C;&#x65B9;&#x4FBF;&#x5FEB;&#x901F;&#x7BA1;&#x7406;&#x3002;&#x4E0A;&#x9762;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x7248;&#x672C;&#xFF0C;&#x5982;&#x679C;&#x8BFB;&#x8005;&#x5E0C;&#x671B;&#x4E0B;&#x8F7D;&#x5176;&#x4ED6;&#x7248;&#x672C;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6570;&#x5B57;6.5.4&#x8FDB;&#x884C;&#x66FF;&#x6362;&#x5373;&#x53EF;&#x3002;   </p>
+<h2 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7ED3;&#x6784;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7ED3;&#x6784;</h2>
+<pre><code>&#x251C;&#x2500;&#x2500; fields.yml
+&#x251C;&#x2500;&#x2500; metricbeat.reference.yml
+&#x251C;&#x2500;&#x2500; metricbeat.yml
+&#x2514;&#x2500;&#x2500; modules.d
+    &#x251C;&#x2500;&#x2500; aerospike.yml.disabled
+    &#x251C;&#x2500;&#x2500; apache.yml.disabled
+    &#x251C;&#x2500;&#x2500; ceph.yml.disabled
+    &#x251C;&#x2500;&#x2500; couchbase.yml.disabled
+    &#x251C;&#x2500;&#x2500; docker.yml.disabled
+    &#x251C;&#x2500;&#x2500; dropwizard.yml.disabled
+    &#x251C;&#x2500;&#x2500; elasticsearch.yml.disabled
+    &#x251C;&#x2500;&#x2500; etcd.yml.disabled
+    &#x251C;&#x2500;&#x2500; golang.yml.disabled
+    &#x251C;&#x2500;&#x2500; graphite.yml.disabled
+    &#x251C;&#x2500;&#x2500; haproxy.yml.disabled
+    &#x251C;&#x2500;&#x2500; http.yml.disabled
+    &#x251C;&#x2500;&#x2500; jolokia.yml.disabled
+    &#x251C;&#x2500;&#x2500; kafka.yml.disabled
+    &#x251C;&#x2500;&#x2500; kibana.yml.disabled
+    &#x251C;&#x2500;&#x2500; kubernetes.yml.disabled
+    &#x251C;&#x2500;&#x2500; logstash.yml.disabled
+    &#x251C;&#x2500;&#x2500; memcached.yml.disabled
+    &#x251C;&#x2500;&#x2500; mongodb.yml.disabled
+    &#x251C;&#x2500;&#x2500; mysql.yml.disabled
+    &#x251C;&#x2500;&#x2500; nginx.yml.disabled
+    &#x251C;&#x2500;&#x2500; php_fpm.yml.disabled
+    &#x251C;&#x2500;&#x2500; postgresql.yml.disabled
+    &#x251C;&#x2500;&#x2500; prometheus.yml.disabled
+    &#x251C;&#x2500;&#x2500; rabbitmq.yml.disabled
+    &#x251C;&#x2500;&#x2500; redis.yml.disabled
+    &#x251C;&#x2500;&#x2500; system.yml
+    &#x251C;&#x2500;&#x2500; uwsgi.yml.disabled
+    &#x251C;&#x2500;&#x2500; vsphere.yml.disabled
+    &#x251C;&#x2500;&#x2500; windows.yml.disabled
+    &#x2514;&#x2500;&#x2500; zookeeper.yml.disabled
+</code></pre><p>&#x5176;&#x4E2D;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x7684;&#x6587;&#x4EF6;&#x6709;metricbeat.yml&#x548C;modules.d&#x4E0B;&#x7684;&#x6A21;&#x5757;&#x76D1;&#x63A7;&#x6587;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;metricbeat&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x5FEB;&#x901F;&#x76D1;&#x63A7;&#x76F8;&#x5173;&#x7EC4;&#x4EF6;&#x3002;<br>&#x5982;&#x679C;&#x9700;&#x8981;&#x542F;&#x52A8;&#x67D0;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x76D1;&#x63A7;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x76F8;&#x5173;&#x6A21;&#x5757;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4ECE;xxxx.yml.disabled&#x4FEE;&#x6539;&#x6210;xxxx.yml&#x6216;&#x8005;&#x4E5F;&#x662F;&#x63A8;&#x8350;&#x7684;&#x505A;&#x6CD5;<strong>metricbeat modules enable xxxx</strong>
+&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x5C06;&#x8BB2;&#x8FF0;&#x76F8;&#x5173;&#x7684;&#x4E00;&#x4E9B;yml&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x9879;</p>
+<h3 id="metricbeatyml">metricbeat.yml</h3>
+<pre><code class="lang-yaml"><span class="hljs-comment"># &#x6A21;&#x5757;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</span>
+metricbeat.config.modules:
+  <span class="hljs-comment"># &#x6A21;&#x5757;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;</span>
+<span class="hljs-attr">  path:</span> ${path.config}/modules.d/*.yml
+  <span class="hljs-comment"># &#x662F;&#x5426;&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+  reload.enabled: <span class="hljs-literal">true</span>
+  <span class="hljs-comment"># &#x81EA;&#x52A8;&#x91CD;&#x8F7D;&#x7684;&#x68C0;&#x6D4B;&#x5468;&#x671F;</span>
+  reload.period: <span class="hljs-number">10</span>s
+<span class="hljs-comment"># ES&#x5B58;&#x50A8;&#x4E2D;&#x76F8;&#x5173;&#x8BBE;&#x7F6E;</span>
+setup.template.settings:
+  <span class="hljs-comment"># &#x7D22;&#x5F15;&#x5206;&#x7247;&#x6570;&#x91CF;</span>
+  index.number_of_shards: <span class="hljs-number">1</span>
+  <span class="hljs-comment"># &#x7D22;&#x5F15;&#x7684;&#x538B;&#x7F29;</span>
+  index.codec: best_compression
+  <span class="hljs-comment"># &#x662F;&#x5426;&#x4FDD;&#x7559;_source&#x5B57;&#x6BB5;</span>
+  <span class="hljs-comment">#_source.enabled: false</span>
+<span class="hljs-comment"># &#x5F53;&#x524D;beat&#x7684;&#x540D;&#x5B57; &#x8BFB;&#x53D6;&#x65B9;&#x5F0F;&#xFF1A;data[&apos;beat&apos;][&apos;name&apos;]</span>
+<span class="hljs-attr">name:</span> test
+<span class="hljs-comment"># &#x6807;&#x7B7E;</span>
+<span class="hljs-comment">#tags: [&quot;service-X&quot;, &quot;web-tier&quot;]</span>
+<span class="hljs-comment"># &#x5176;&#x4ED6;&#x5B57;&#x6BB5; &#x8BFB;&#x53D6;&#x65B9;&#x5F0F;&#xFF1A;data[&apos;fields&apos;][&apos;env&apos;]</span>
+<span class="hljs-comment">#fields:</span>
+<span class="hljs-comment">#  env: staging</span>
+<span class="hljs-comment"># &#x662F;&#x5426;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;kibana&#x770B;&#x677F;</span>
+setup.dashboards.enabled: <span class="hljs-literal">true</span>
+<span class="hljs-comment"># &#x770B;&#x677F;&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x7528;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F7F;&#x7528;elatic.co&#x5B98;&#x65B9;&#x7684;&#x5373;&#x53EF;</span>
+<span class="hljs-comment">#setup.dashboards.url:</span>
+
+<span class="hljs-comment">#============================== Kibana =====================================</span>
+
+<span class="hljs-comment"># Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.</span>
+<span class="hljs-comment"># This requires a Kibana endpoint configuration.</span>
+setup.kibana:
+
+  <span class="hljs-comment"># Kibana Host</span>
+  <span class="hljs-comment"># Scheme and port can be left out and will be set to the default (http and 5601)</span>
+  <span class="hljs-comment"># In case you specify and additional path, the scheme is required: http://localhost:5601/path</span>
+  <span class="hljs-comment"># IPv6 addresses should always be defined as: https://[2001:db8::1]:5601</span>
+  <span class="hljs-comment">#host: &quot;localhost:5601&quot;</span>
+
+<span class="hljs-comment">#============================= Elastic Cloud ==================================</span>
+
+<span class="hljs-comment"># These settings simplify using metricbeat with the Elastic Cloud (https://cloud.elastic.co/).</span>
+
+<span class="hljs-comment"># The cloud.id setting overwrites the `output.elasticsearch.hosts` and</span>
+<span class="hljs-comment"># `setup.kibana.host` options.</span>
+<span class="hljs-comment"># You can find the `cloud.id` in the Elastic Cloud web UI.</span>
+<span class="hljs-comment">#cloud.id:</span>
+
+<span class="hljs-comment"># The cloud.auth setting overwrites the `output.elasticsearch.username` and</span>
+<span class="hljs-comment"># `output.elasticsearch.password` settings. The format is `&lt;user&gt;:&lt;pass&gt;`.</span>
+<span class="hljs-comment">#cloud.auth:</span>
+
+<span class="hljs-comment">#================================ Outputs =====================================</span>
+
+<span class="hljs-comment"># Configure what output to use when sending the data collected by the beat.</span>
+
+<span class="hljs-comment">#-------------------------- Elasticsearch output ------------------------------</span>
+output.elasticsearch:
+  <span class="hljs-comment"># Array of hosts to connect to.</span>
+<span class="hljs-attr">  hosts:</span> [<span class="hljs-string">&quot;localhost:9200&quot;</span>]
+
+  <span class="hljs-comment"># Optional protocol and basic auth credentials.</span>
+  <span class="hljs-comment">#protocol: &quot;https&quot;</span>
+  <span class="hljs-comment">#username: &quot;elastic&quot;</span>
+  <span class="hljs-comment">#password: &quot;changeme&quot;</span>
+
+<span class="hljs-comment">#----------------------------- Logstash output --------------------------------</span>
+<span class="hljs-comment">#output.logstash:</span>
+  <span class="hljs-comment"># The Logstash hosts</span>
+  <span class="hljs-comment">#hosts: [&quot;localhost:5044&quot;]</span>
+
+  <span class="hljs-comment"># Optional SSL. By default is off.</span>
+  <span class="hljs-comment"># List of root certificates for HTTPS server verifications</span>
+  <span class="hljs-comment">#ssl.certificate_authorities: [&quot;/etc/pki/root/ca.pem&quot;]</span>
+
+  <span class="hljs-comment"># Certificate for SSL client authentication</span>
+  <span class="hljs-comment">#ssl.certificate: &quot;/etc/pki/client/cert.pem&quot;</span>
+
+  <span class="hljs-comment"># Client Certificate Key</span>
+  <span class="hljs-comment">#ssl.key: &quot;/etc/pki/client/cert.key&quot;</span>
+
+<span class="hljs-comment">#================================ Logging =====================================</span>
+
+<span class="hljs-comment"># Sets log level. The default log level is info.</span>
+<span class="hljs-comment"># Available log levels are: error, warning, info, debug</span>
+<span class="hljs-comment">#logging.level: debug</span>
+
+<span class="hljs-comment"># At debug level, you can selectively enable logging only for some components.</span>
+<span class="hljs-comment"># To enable all selectors use [&quot;*&quot;]. Examples of other selectors are &quot;beat&quot;,</span>
+<span class="hljs-comment"># &quot;publish&quot;, &quot;service&quot;.</span>
+<span class="hljs-comment">#logging.selectors: [&quot;*&quot;]</span>
+
+<span class="hljs-comment">#============================== Xpack Monitoring ===============================</span>
+<span class="hljs-comment"># metricbeat can export internal metrics to a central Elasticsearch monitoring</span>
+<span class="hljs-comment"># cluster.  This requires xpack monitoring to be enabled in Elasticsearch.  The</span>
+<span class="hljs-comment"># reporting is disabled by default.</span>
+
+<span class="hljs-comment"># Set to true to enable the monitoring reporter.</span>
+<span class="hljs-comment">#xpack.monitoring.enabled: false</span>
+
+<span class="hljs-comment"># Uncomment to send the metrics to Elasticsearch. Most settings from the</span>
+<span class="hljs-comment"># Elasticsearch output are accepted here as well. Any setting that is not set is</span>
+<span class="hljs-comment"># automatically inherited from the Elasticsearch output configuration, so if you</span>
+<span class="hljs-comment"># have the Elasticsearch output configured, you can simply uncomment the</span>
+<span class="hljs-comment"># following line.</span>
+<span class="hljs-comment">#xpack.monitoring.elasticsearch:</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="fb.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.4 FileBeat配置">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.5 MetricBeat配置","level":"1.3.5","depth":2,"previous":{"title":"2.4 FileBeat配置","level":"1.3.4","depth":2,"path":"c2/fb.md","ref":"c2/fb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c2/mb.md","mtime":"2019-01-20T13:31:10.448Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T05:11:43.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
