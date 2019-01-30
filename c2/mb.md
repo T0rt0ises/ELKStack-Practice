@@ -99,32 +99,25 @@ setup.template.settings:
   #_source.enabled: false
 # 当前beat的名字 读取方式：data['beat']['name']
 name: test
-# 标签
-#tags: ["service-X", "web-tier"]
-# 其他字段 读取方式：data['fields']['env']
+# 标签 tags: ["a", "b"]
+tags: ["a", "b"]
+# 其他额外字段 读取方式：data['fields']['env']
 #fields:
 #  env: staging
-# 是否自动设置kibana看板
+# 是否自动设置kibana看板，支持setup命令和--setup参数
 setup.dashboards.enabled: true
 # 看板的下载地址，一般不用设置，使用elatic.co官方的即可
 #setup.dashboards.url:
 
 #============================== Kibana =====================================
 
-# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-# This requires a Kibana endpoint configuration.
+# 设置kibana的ip和端口
 setup.kibana:
-
-  # Kibana Host
-  # Scheme and port can be left out and will be set to the default (http and 5601)
-  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
-  #host: "localhost:5601"
+  # 如果是有协议，有url的地址
+  host: "https://abc.com:443/_plugins/kibana"
 
 #============================= Elastic Cloud ==================================
-
 # These settings simplify using metricbeat with the Elastic Cloud (https://cloud.elastic.co/).
-
 # The cloud.id setting overwrites the `output.elasticsearch.hosts` and
 # `setup.kibana.host` options.
 # You can find the `cloud.id` in the Elastic Cloud web UI.
@@ -133,59 +126,32 @@ setup.kibana:
 # The cloud.auth setting overwrites the `output.elasticsearch.username` and
 # `output.elasticsearch.password` settings. The format is `<user>:<pass>`.
 #cloud.auth:
-
 #================================ Outputs =====================================
-
-# Configure what output to use when sending the data collected by the beat.
-
-#-------------------------- Elasticsearch output ------------------------------
+#直接输出到ElasticSearch，选择其中一个即可
 output.elasticsearch:
-  # Array of hosts to connect to.
-  hosts: ["localhost:9200"]
-
-  # Optional protocol and basic auth credentials.
-  #protocol: "https"
+  hosts: ["abcd.com:443"]
+  protocol: "https"
   #username: "elastic"
   #password: "changeme"
 
-#----------------------------- Logstash output --------------------------------
+# 输出到logstash，选择其中一个即可
 #output.logstash:
-  # The Logstash hosts
   #hosts: ["localhost:5044"]
-
-  # Optional SSL. By default is off.
-  # List of root certificates for HTTPS server verifications
   #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
-
-  # Certificate for SSL client authentication
   #ssl.certificate: "/etc/pki/client/cert.pem"
-
-  # Client Certificate Key
   #ssl.key: "/etc/pki/client/cert.key"
 
 #================================ Logging =====================================
-
-# Sets log level. The default log level is info.
-# Available log levels are: error, warning, info, debug
 #logging.level: debug
-
-# At debug level, you can selectively enable logging only for some components.
-# To enable all selectors use ["*"]. Examples of other selectors are "beat",
-# "publish", "service".
 #logging.selectors: ["*"]
 
 #============================== Xpack Monitoring ===============================
-# metricbeat can export internal metrics to a central Elasticsearch monitoring
-# cluster.  This requires xpack monitoring to be enabled in Elasticsearch.  The
-# reporting is disabled by default.
-
-# Set to true to enable the monitoring reporter.
 #xpack.monitoring.enabled: false
-
-# Uncomment to send the metrics to Elasticsearch. Most settings from the
-# Elasticsearch output are accepted here as well. Any setting that is not set is
-# automatically inherited from the Elasticsearch output configuration, so if you
-# have the Elasticsearch output configured, you can simply uncomment the
-# following line.
 #xpack.monitoring.elasticsearch:
 ```
+## 创建默认看板
+在上面选项中将**setup.dashboards.enabled**设置成**true**之后，我们就可以创建看板了。   
+```bash
+metricbeat setup
+```
+等待创建完毕即可。
