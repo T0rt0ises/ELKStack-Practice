@@ -1,2 +1,2 @@
 # 1.6 AuditBeat介绍
-
+AuditBeat它可以收集Linux审计框架所产生的数据，监控文件的完整性，并将所有的数据传输到Elasticsearch中用于日后的分析。

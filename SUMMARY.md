@@ -16,4 +16,5 @@
     * [2.3 Kibana配置](c2/kibana.md)
     * [2.4 FileBeat配置](c2/fb.md)
     * [2.5 MetricBeat配置](c2/mb.md)
+    * [2.6 AuditBeat配置](c2/ab.md)
 

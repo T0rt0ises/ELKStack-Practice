@@ -310,6 +310,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.6" data-path="ab.html">
+            
+                <a href="ab.html">
+            
+                    
+                    2.6 AuditBeat配置
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -360,8 +373,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="222-grok">2.2.2 GROK</h1>
-
+                                <h1 id="222-grok&#x4ECB;&#x7ECD;">2.2.2 GROK&#x4ECB;&#x7ECD;</h1>
+<h2 id="&#x8BED;&#x6CD5;&#x4ECB;&#x7ECD;">&#x8BED;&#x6CD5;&#x4ECB;&#x7ECD;</h2>
+<h2 id="&#x5728;&#x7EBF;&#x8C03;&#x8BD5;">&#x5728;&#x7EBF;&#x8C03;&#x8BD5;</h2>
+<p><a href="https://grokdebug.herokuapp.com/" target="_blank">https://grokdebug.herokuapp.com/</a></p>
+<h2 id="&#x5E38;&#x89C1;&#x4ECB;&#x7ECD;">&#x5E38;&#x89C1;&#x4ECB;&#x7ECD;</h2>
+<h3 id="nginx-error&#x65E5;&#x5FD7;">Nginx Error&#x65E5;&#x5FD7;</h3>
+<p><strong>grok</strong></p>
+<pre><code>grok {        
+    match =&gt; [&quot;message&quot;, &quot;(?&lt;timestamp&gt;%{YEAR}[./]%{MONTHNUM}[./]%{MONTHDAY} %{TIME}) \[%{LOGLEVEL:severity}\] %{POSINT:pid}#%{INT:threadid}: (\*%{INT:connectionid})?%{GREEDYDATA:msg}&quot;]
+    remove_field =&gt; &quot;message&quot;
+}
+</code></pre><h3 id="&#x81EA;&#x5B9A;&#x4E49;nginx-access&#x65E5;&#x5FD7;1">&#x81EA;&#x5B9A;&#x4E49;Nginx Access&#x65E5;&#x5FD7;1</h3>
+<pre><code class="lang-nginx"><span class="hljs-attribute">log_format</span> jsonlog <span class="hljs-string">&apos;<span class="hljs-variable">$time_local</span>|<span class="hljs-variable">$remote_addr</span> &quot;<span class="hljs-variable">$request_method</span> <span class="hljs-variable">$http_host</span> <span class="hljs-variable">$request_uri</span>&quot; <span class="hljs-variable">$content_length</span>/<span class="hljs-variable">$body_bytes_sent</span> <span class="hljs-variable">$status</span>/<span class="hljs-variable">$upstream_status</span> <span class="hljs-variable">$request_time</span>/<span class="hljs-variable">$upstream_connect_time</span>/<span class="hljs-variable">$upstream_response_time</span> &quot;<span class="hljs-variable">$upstream_addr</span>&quot; &quot;<span class="hljs-variable">$http_user_agent</span>&quot; &quot;<span class="hljs-variable">$cookie_SESSION</span>&quot; &quot;<span class="hljs-variable">$http_kc_api_key</span>&quot; &quot;<span class="hljs-variable">$http_x_forwarded_for</span>&quot;&apos;</span>;
+</code></pre>
+<p><strong>grok</strong></p>
+<pre><code>grok {
+        match =&gt; [&quot;message&quot;, &quot;%{HTTPDATE:time}\|%{IP:client} \&quot;%{WORD:method} %{DATA:http_host} %{DATA:uri}\&quot; (-|%{INT:length})/(-|%{INT:resp_length}) %{INT:status}/%{INT:upstream_status} %{NUMBER:request_time}/%{NUMBER:upstream_connect_time}/%{NUMBER:upstream_resp_time} \&quot;%{DATA:upstream}\&quot; \&quot;%{DATA:agent}\&quot; \&quot;%{DATA:session}\&quot; \&quot;%{DATA:api_key}\&quot; \&quot;%{DATA:xff}\&quot;&quot;]
+}
+mutate {
+        convert =&gt; {
+                &quot;length&quot; =&gt; &quot;integer&quot;
+                &quot;resp_length&quot; =&gt; &quot;integer&quot;
+                &quot;status&quot; =&gt; &quot;integer&quot;
+                &quot;upstream_status&quot; =&gt; &quot;integer&quot;
+                &quot;request_time&quot; =&gt; &quot;float&quot;
+                &quot;upstream_connect_time&quot; =&gt; &quot;float&quot;
+                &quot;upstream_resp_time&quot; =&gt; &quot;float&quot;
+        }
+        remove_field =&gt; [ &quot;message&quot; ]
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -404,7 +446,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2.2 GROK","level":"1.3.2.2","depth":3,"next":{"title":"2.3 Kibana配置","level":"1.3.3","depth":2,"path":"c2/kibana.md","ref":"c2/kibana.md","articles":[]},"previous":{"title":"2.2.1 基本配置","level":"1.3.2.1","depth":3,"path":"c2/logstash.1.md","ref":"c2/logstash.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c2/logstash.2.md","mtime":"2019-01-20T04:50:52.991Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T05:11:43.636Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2.2 GROK","level":"1.3.2.2","depth":3,"next":{"title":"2.3 Kibana配置","level":"1.3.3","depth":2,"path":"c2/kibana.md","ref":"c2/kibana.md","articles":[]},"previous":{"title":"2.2.1 基本配置","level":"1.3.2.1","depth":3,"path":"c2/logstash.1.md","ref":"c2/logstash.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c2/logstash.2.md","mtime":"2019-01-21T09:55:06.963Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-13T07:34:24.043Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
